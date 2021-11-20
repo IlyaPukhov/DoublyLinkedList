@@ -12,8 +12,7 @@ class DoublyLinkedList<T> {
         } else {
             val oldHead = head //сохраняем "старую" голову
             head = Node(x, oldHead, null) //создаем "новую" голову со ссылками на прошлую и на null
-            head?.next?.prev = head
-
+            oldHead?.prev = head
         }
     }
 
@@ -26,7 +25,7 @@ class DoublyLinkedList<T> {
         } else {
             val oldTail = tail //сохраняем "старый" хвост
             tail = Node(x, null, oldTail) //создаем "новый" хвост со ссылками на прошлую и на null
-            tail?.prev?.next = tail
+            oldTail?.next = tail
         }
     }
 
